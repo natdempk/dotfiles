@@ -1,12 +1,17 @@
+" required
 set nocompatible
+filetype off
+" opt
 set shell=bash
 syntax enable
-filetype plugin indent on
 
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" required
+Plugin 'gmarik/Vundle.vim'
 
 set expandtab
 set t_Co=256
@@ -54,12 +59,16 @@ Bundle 'bhilburn/kernel-coding-style'
 Bundle 'nathanaelkane/vim-indent-guides'
 " add ability to refer to surrounding []() etc
 Bundle 'tpope/vim-surround'
-" lotsa color schemes (desert256)
+" lotsa color schemes (for desert256)
 Bundle 'flazz/vim-colorschemes'
 " some more colors that don't work totally...
-Bundle 'chriskempson/base16-vim'
+" Bundle 'chriskempson/base16-vim'
 " create pairs of [] automatically when typing like subl
 Bundle 'jiangmiao/auto-pairs'
+
+" all plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
 
 " display line movement
 nnoremap j gj
