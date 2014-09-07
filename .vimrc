@@ -1,4 +1,4 @@
-" required
+"required
 set nocompatible
 filetype off
 " opt
@@ -109,7 +109,7 @@ au BufWritePost .vimrc so ~/.vimrc
 " vim-airline configuration
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 " vim-indent-guides config
 let g:indent_guides_start_level = 1
