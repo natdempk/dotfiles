@@ -150,6 +150,9 @@ let g:go_highlight_extra_types = 1
 " maybe remove this later
 let g:go_fmt_autosave = 0
 
+" flake8 gutter
+let g:flake8_show_in_gutter = 1
+
 " auto flake8 on python writes
 autocmd BufWritePost *.py call Flake8()
 
