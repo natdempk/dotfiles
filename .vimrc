@@ -36,9 +36,10 @@ set linebreak
 set showbreak=+++ 	
 set showmatch	
 set undolevels=1000	
-set colorcolumn=100
+set colorcolumn=90
 set backspace=indent,eol,start
-colorscheme desert256
+colorscheme solarized
+"colorscheme desert256
 
 " mostly support transparent terminal
 hi Normal ctermbg=NONE
@@ -92,7 +93,9 @@ nnoremap <silent> ]B :blast<CR>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-
+" fix <C-j>
+let g:BASH_Ctrl_j = 'off'
+let g:C_Ctrl_j = 'off'
 " better pane movement
 noremap <C-J> <C-W>w
 noremap <C-K> <C-W>W
@@ -118,6 +121,12 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=darkgray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=darkgray
 autocmd BufReadPre,FileReadPre * :IndentGuidesEnable
+
+" latex, yo
+"let g:tex_flavor = "latex"
+"let g:Tex_DefaultTargetFormat = 'pdf'
+"let g:Tex_MultipleCompileFormats = 'dvi,pdf'
+"let g:Tex_CompileRule_pdf = 'pdflatex -enable-write18 -interaction=nonstopmode $*'
 
 " stop gitgutter freaking out
 let g:gitgutter_realtime = 0
