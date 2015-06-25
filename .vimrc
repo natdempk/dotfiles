@@ -36,7 +36,7 @@ set linebreak
 set showbreak=+++ 	
 set showmatch	
 set undolevels=1000	
-set colorcolumn=100
+set colorcolumn=120
 set backspace=indent,eol,start
 
 " mostly support transparent terminal
@@ -74,6 +74,10 @@ Bundle 'fatih/vim-go'
 Bundle 'nvie/vim-flake8'
 " Coffescript syntax
 Bundle 'kchmck/vim-coffee-script'
+" Git commands... from vim???
+Bundle 'tpope/vim-fugitive'
+" Diff sections of a file
+Bundle 'AndrewRadev/linediff.vim'
 
 " all plugins must be added before the following line
 call vundle#end()
@@ -155,6 +159,9 @@ let g:flake8_show_in_gutter = 1
 
 " auto flake8 on python writes
 autocmd BufWritePost *.py call Flake8()
+
+" V -> less for pasting cleanly
+vmap <Leader>z :write !less<cr>
 
 " solarized colors fix
 let g:solarized_termcolors=16
