@@ -20,6 +20,14 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 export PIP_REQUIRE_VIRTUALENV=true
 
+gpip(){
+   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+
+gpip3(){
+   PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
+}
+
 # aliases
 alias zshrc="vim ~/.zshrc"
 alias dotfiles="cd ~/Projects/dotfiles/"
