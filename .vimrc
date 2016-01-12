@@ -83,6 +83,10 @@ Bundle 'AndrewRadev/linediff.vim'
 Bundle 'wlangstroth/vim-racket'
 " elixir
 Plugin 'elixir-lang/vim-elixir'
+" vim-js
+Bundle "pangloss/vim-javascript"
+" React
+Bundle 'mxw/vim-jsx'
 
 " all plugins must be added before the following line
 call vundle#end()
@@ -189,6 +193,11 @@ vmap <Leader>z :write !less<cr>
 
 " solarized colors fix
 let g:solarized_termcolors=16
+
+" js/jsx/html files 2 spaces
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype jsx setlocal ts=2 sts=2 sw=2 expandtab
 
 " this is moved due to paranoia about colors not working
 syntax on
