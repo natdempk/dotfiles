@@ -79,6 +79,10 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-fugitive'
 " Diff sections of a file
 Bundle 'AndrewRadev/linediff.vim'
+" Racket
+Bundle 'wlangstroth/vim-racket'
+" elixir
+Plugin 'elixir-lang/vim-elixir'
 
 " all plugins must be added before the following line
 call vundle#end()
@@ -155,6 +159,16 @@ au BufRead,BufNewFile *.go setlocal tabstop=2
 au BufRead,BufNewFile *.go setlocal softtabstop=2
 au BufRead,BufNewFile *.go setlocal shiftwidth=2
 au BufRead,BufNewFile *.go setlocal expandtab
+" Recognize js/html files
+au BufRead,BufNewFile *.html setlocal tabstop=2
+au BufRead,BufNewFile *.html setlocal softtabstop=2
+au BufRead,BufNewFile *.html setlocal shiftwidth=2
+au BufRead,BufNewFile *.html setlocal expandtab
+" Recognize js/html files
+au BufRead,BufNewFile *.js setlocal tabstop=2
+au BufRead,BufNewFile *.js setlocal softtabstop=2
+au BufRead,BufNewFile *.js setlocal shiftwidth=2
+au BufRead,BufNewFile *.js setlocal expandtab
 
 " go syntax highlighting
 let g:go_highlight_functions = 1
