@@ -32,3 +32,5 @@ gpip3(){
 alias zshrc="vim ~/.zshrc"
 alias dotfiles="cd ~/Projects/dotfiles/"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
