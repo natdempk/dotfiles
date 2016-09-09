@@ -69,7 +69,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'jiangmiao/auto-pairs'
 " Fuzzy find with <c-p>
 Bundle 'kien/ctrlp.vim'
-" G-G-G-G-GO
+" golang
 Bundle 'fatih/vim-go'
 " Improved python linting
 Bundle 'nvie/vim-flake8'
@@ -174,14 +174,45 @@ au BufRead,BufNewFile *.js setlocal softtabstop=2
 au BufRead,BufNewFile *.js setlocal shiftwidth=2
 au BufRead,BufNewFile *.js setlocal expandtab
 
+" Golang stuff
+" ====================
 " go syntax highlighting
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_extra_types = 1
-" maybe remove this later
-let g:go_fmt_autosave = 0
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+" maybe remove this later, for now leaving commented
+"let g:go_fmt_autosave = 0
+" automatically insert import/resolve import paths
+" need to run:
+" $ go get golang.org/x/tools/cmd/goimports
+let g:go_fmt_command = "goimports"
 
+
+" go run, build, test, coverage
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+" open identifier in splits
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+" open godoc in panes
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+" godoc browser
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+" go implemented interfaces
+au FileType go nmap <Leader>s <Plug>(go-implements)
+
+
+
+
+" Python stuff
+" ===========
 " flake8 gutter
 let g:flake8_show_in_gutter = 1
 
