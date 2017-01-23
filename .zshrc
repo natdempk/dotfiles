@@ -15,6 +15,7 @@ export GOPATH=$HOME/Projects/gocode
 export PATH=$PATH:$GOPATH/bin
 
 source $ZSH/oh-my-zsh.sh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -36,3 +37,6 @@ alias dotfiles="cd ~/Projects/dotfiles/"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# OPAM configuration
+. /Users/natdempk/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

@@ -7,6 +7,9 @@ set shell=bash
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
 set rtp+=~/.vim/bundle/Vundle.vim
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
 call vundle#begin()
 
 " required
@@ -87,6 +90,8 @@ Plugin 'elixir-lang/vim-elixir'
 Bundle "pangloss/vim-javascript"
 " React
 Bundle 'mxw/vim-jsx'
+" ocaml
+Bundle 'let-def/ocp-indent-vim'
 
 " all plugins must be added before the following line
 call vundle#end()
@@ -190,7 +195,6 @@ let g:go_highlight_build_constraints = 1
 " $ go get golang.org/x/tools/cmd/goimports
 let g:go_fmt_command = "goimports"
 
-
 " go run, build, test, coverage
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
@@ -207,9 +211,6 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 " go implemented interfaces
 au FileType go nmap <Leader>s <Plug>(go-implements)
-
-
-
 
 " Python stuff
 " ===========
@@ -230,6 +231,15 @@ autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype coffee setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype jsx setlocal ts=2 sts=2 sw=2 expandtab
+
+" jsx everywhere
+let g:jsx_ext_required = 0
+
+" jsx syntastic eslint
+"let g:syntastic_javascript_checkers = ['eslint']
+
+" markdown fix
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " this is moved due to paranoia about colors not working
 syntax on
