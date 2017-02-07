@@ -54,6 +54,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
 " syntax checking on write
 "Bundle 'scrooloose/syntastic'
+Bundle 'vim-syntastic/syntastic'
 " easy commenting
 Bundle 'scrooloose/nerdcommenter'
 " kernel coding style for C
@@ -231,12 +232,26 @@ autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype coffee setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype jsx setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype c setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype cpp setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype ml setlocal ts=2 sts=2 sw=2 expandtab
 
 " jsx everywhere
 let g:jsx_ext_required = 0
 
 " jsx syntastic eslint
 "let g:syntastic_javascript_checkers = ['eslint']
+"
+
+" Syntastic stuff?
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " markdown fix
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
