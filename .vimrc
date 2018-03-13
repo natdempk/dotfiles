@@ -18,27 +18,27 @@ Plugin 'gmarik/Vundle.vim'
 set expandtab
 "set t_Co=256
 set t_Co=16
-set hlsearch	
-set smartcase	
-set ignorecase	
-set incsearch   
+set hlsearch
+set smartcase
+set ignorecase
+set incsearch
 set cindent
-set expandtab	
+set expandtab
 set shiftwidth=4
 set smartindent	
-set smarttab	
+set smarttab
 set softtabstop=4
 set tabstop=4
-set ruler	
+set ruler
 set encoding=utf-8
 set showcmd
-set background=dark
+set background=light
 set relativenumber
-set number	
-set linebreak	
+set number
+set linebreak
 set showbreak=+++ 	
-set showmatch	
-set undolevels=1000	
+set showmatch
+set undolevels=5000
 set colorcolumn=120
 set backspace=indent,eol,start
 colorscheme solarized
@@ -57,18 +57,12 @@ Bundle 'bling/vim-airline'
 Bundle 'vim-syntastic/syntastic'
 " easy commenting
 Bundle 'scrooloose/nerdcommenter'
-" kernel coding style for C
-"Bundle 'bhilburn/kernel-coding-style'
 " indentation level guides
 Bundle 'nathanaelkane/vim-indent-guides'
 " add ability to refer to surrounding []() etc
 Bundle 'tpope/vim-surround'
-" lotsa color schemes (for desert256)
-Bundle 'flazz/vim-colorschemes'
 " Solarized
 Bundle 'altercation/vim-colors-solarized'
-" some more colors that don't work totally...
-" Bundle 'chriskempson/base16-vim'
 " create pairs of [] automatically when typing like subl
 Bundle 'jiangmiao/auto-pairs'
 " Fuzzy find with <c-p>
@@ -91,8 +85,8 @@ Plugin 'elixir-lang/vim-elixir'
 Bundle "pangloss/vim-javascript"
 " React
 Bundle 'mxw/vim-jsx'
-" ocaml
-Bundle 'let-def/ocp-indent-vim'
+" pony
+Bundle 'dleonard0/pony-vim-syntax'
 
 " all plugins must be added before the following line
 call vundle#end()
@@ -144,7 +138,6 @@ au BufWritePost .vimrc so ~/.vimrc
 " vim-airline configuration
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 0
 
 " vim-indent-guides config
 let g:indent_guides_start_level = 1
@@ -169,16 +162,21 @@ au BufRead,BufNewFile *.go setlocal tabstop=2
 au BufRead,BufNewFile *.go setlocal softtabstop=2
 au BufRead,BufNewFile *.go setlocal shiftwidth=2
 au BufRead,BufNewFile *.go setlocal expandtab
-" Recognize js/html files
+" Recognize html files
 au BufRead,BufNewFile *.html setlocal tabstop=2
 au BufRead,BufNewFile *.html setlocal softtabstop=2
 au BufRead,BufNewFile *.html setlocal shiftwidth=2
 au BufRead,BufNewFile *.html setlocal expandtab
-" Recognize js/html files
+" Recognize js files
 au BufRead,BufNewFile *.js setlocal tabstop=2
 au BufRead,BufNewFile *.js setlocal softtabstop=2
 au BufRead,BufNewFile *.js setlocal shiftwidth=2
 au BufRead,BufNewFile *.js setlocal expandtab
+" Recognize arduino files
+au BufRead,BufNewFile *.ino setlocal tabstop=2
+au BufRead,BufNewFile *.ino setlocal softtabstop=2
+au BufRead,BufNewFile *.ino setlocal shiftwidth=2
+au BufRead,BufNewFile *.ino setlocal expandtab
 
 " Golang stuff
 " ====================
@@ -235,6 +233,7 @@ autocmd Filetype jsx setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype c setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype cpp setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype ml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype pony setlocal ts=2 sts=2 sw=2 expandtab
 
 " jsx everywhere
 let g:jsx_ext_required = 0
