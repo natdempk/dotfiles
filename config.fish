@@ -4,3 +4,8 @@ if [ -f '/Users/natdempk/Downloads/google-cloud-sdk/path.fish.inc' ]; if type so
 
 # rust cargo
 set PATH $HOME/.cargo/bin $PATH
+
+
+function jp
+    jq --sort-keys . $argv
+end
