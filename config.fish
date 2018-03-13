@@ -50,3 +50,7 @@ end
 function gp
     git push $argv
 end
+
+function gl
+    git log $argv
+end
