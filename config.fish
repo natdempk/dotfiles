@@ -25,3 +25,24 @@ end
 function jpy
     jp | pbcopy
 end
+
+# git stuff
+function gs
+    git status
+end
+
+function gd
+    git diff
+end
+
+function gdc
+    git diff --cached
+end
+
+function ga
+    git add $argv
+end
+
+function gcm
+    git commit -m $argv
+end
