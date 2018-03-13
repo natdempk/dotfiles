@@ -7,8 +7,6 @@ set shell=bash
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
 set rtp+=~/.vim/bundle/Vundle.vim
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 call vundle#begin()
 
@@ -87,6 +85,8 @@ Bundle "pangloss/vim-javascript"
 Bundle 'mxw/vim-jsx'
 " pony
 Bundle 'dleonard0/pony-vim-syntax'
+" fish
+Bundle 'dag/vim-fish'
 
 " all plugins must be added before the following line
 call vundle#end()
