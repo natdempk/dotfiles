@@ -32,11 +32,11 @@ function gs
 end
 
 function gd
-    git diff
+    git diff $argv
 end
 
 function gdc
-    git diff --cached
+    git diff --cached $argv
 end
 
 function ga
@@ -45,4 +45,8 @@ end
 
 function gcm
     git commit -m $argv
+end
+
+function gp
+    git push $argv
 end
