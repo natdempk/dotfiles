@@ -1,6 +1,6 @@
 #
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/natdempk/Downloads/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/natdempk/Downloads/google-cloud-sdk/path.fish.inc'; else; . '/Users/natdempk/Downloads/google-cloud-sdk/path.fish.inc'; end; end
+# if [ -f '/Users/natdempk/Downloads/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/natdempk/Downloads/google-cloud-sdk/path.fish.inc'; else; . '/Users/natdempk/Downloads/google-cloud-sdk/path.fish.inc'; end; end
 
 # rust cargo
 set PATH $HOME/.cargo/bin $PATH
@@ -44,7 +44,12 @@ function ga
 end
 
 function gcm
-    git commit -m $argv
+    git checkout master
+end
+
+function gcmp
+    git checkout master
+    git pull
 end
 
 function gp
@@ -53,4 +58,8 @@ end
 
 function gl
     git log $argv
+end
+
+function mvnc
+    mvn -Dmaven.skipTests -DskipTests -Dcheckstyle.skip -Dhs-swagger.skip=true -DskipValidation=true compile
 end
